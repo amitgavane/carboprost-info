@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carboprost – Drug Information</title>
+  <style>
+    :root {
+      --primary: #145da0;
+      --primary-light: #e3f2fd;
+      --accent: #f39c12;
+      --danger: #c0392b;
+      --bg: #f7f9fc;
+      --card-bg: #ffffff;
+      --text-main: #202630;
+      --text-muted: #6b7280;
+      --border-soft: #e0e6f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e3f2fd, #f7f9fc 45%, #ffffff 80%);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 16px;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #0e3d6f);
+      color: white;
+      padding: 20px 20px 18px;
+      border-radius: 16px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.15);
+      margin-bottom: 20px;
+    }
+
+    .drug-name {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .tag-row {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(4px);
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      header {
+        padding: 16px 14px;
+      }
+      .drug-name {
+        font-size: 1.6rem;
+      }
+    }
+
+    section {
+      margin-bottom: 16px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+      border: 1px solid var(--border-soft);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--primary);
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .dose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .dose-item {
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #f9fafb;
+      border: 1px dashed #d4dde9;
+    }
+
+    .dose-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .dose-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    li {
+      font-size: 0.92rem;
+      position: relative;
+      padding-left: 18px;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+    }
+
+    .badge.danger {
+      background: #fee2e2;
+      color: var(--danger);
+      font-weight: 500;
+    }
+
+    .interaction-list li::before {
+      color: var(--primary);
+    }
+
+    .adr-columns {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .adr-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .chip-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .chip-title.danger {
+      color: var(--danger);
+    }
+
+    .warning-strip {
+      margin-top: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      font-size: 0.85rem;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+
+    .warning-icon {
+      font-size: 1rem;
+      line-height: 1;
+      margin-top: 1px;
+    }
+
+    footer {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 8px;
+      padding: 8px 0 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HEADER / TITLE -->
+    <header>
+      <div class="drug-name">Carboprost</div>
+      <div class="subtitle">
+        Prostaglandin F<sub>2α</sub> analogue · Uterotonic agent
+      </div>
+      <div class="tag-row">
+        <span class="tag">Class: Prostaglandin analogue</span>
+        <span class="tag">Sub-class: PGF<sub>2α</sub> analogue</span>
+        <span class="tag">Route: Deep IM injection</span>
+        <span class="tag">Used in: PPH · 2nd-trimester termination</span>
+      </div>
+    </header>
+
+    <!-- TOP LAYOUT: DOSE + INDICATIONS -->
+    <div class="layout">
+
+      <!-- DOSE & ROUTE -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Dose & Route</h2>
+          <span class="pill">Standard Regimen</span>
+        </div>
+        <div class="dose-grid">
+          <div class="dose-item">
+            <div class="dose-label">Single dose</div>
+            <div class="dose-value">250 micrograms (0.25 mg)</div>
+          </div>
+          <div class="dose-item">
+            <div class="dose-label">Route</div>
+            <div class="dose-value">Deep intramuscular (IM) injection</div>
+          </div>
+          <div class="dose-item">
+            <div class="dose-label">Repeat</div>
+            <div class="dose-value">Every 15–90 minutes</div>
+          </div>
+          <div class="dose-item">
+            <div class="dose-label">Maximum</div>
+            <div class="dose-value">
+              Up to 8 doses (total max 2 mg)
+            </div>
+          </div>
+        </div>
+        <p class="note">
+          *Dosing must always be individualized and used under specialist supervision in a hospital setting.
+        </p>
+      </section>
+
+      <!-- INDICATIONS -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Indications</h2>
+          <span class="pill">Obstetric Uses</span>
+        </div>
+        <ul>
+          <li>
+            <strong>Postpartum hemorrhage (PPH)</strong> due to uterine atony  
+            <span class="note">(after failure of oxytocin and ergometrine)</span>
+          </li>
+          <li>
+            <strong>Second-trimester medical abortion</strong> (≥13 weeks)  
+            – for induction or expulsion
+          </li>
+          <li>
+            <strong>Evacuation of retained products of conception (RPOC)</strong> in mid-trimester
+          </li>
+          <li>
+            <strong>Termination in missed / incomplete abortion</strong> (mid-trimester)
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- MECHANISM + KEY EFFECTS -->
+    <section class="card">
+      <div class="card-header">
+        <h2 class="card-title">Mechanism of Action</h2>
+        <span class="pill">PGF<sub>2α</sub> Receptor Agonist</span>
+      </div>
+      <div class="two-column">
+        <div>
+          <p>
+            Carboprost is a synthetic analogue of prostaglandin F<sub>2α</sub> that binds to
+            prostaglandin F (PGF) receptors in smooth muscle, particularly in the uterus.
+          </p>
+          <ul>
+            <li>Stimulates <strong>strong uterine contractions</strong> and increases uterine tone.</li>
+            <li>Causes vasoconstriction of uterine blood vessels, helping to reduce bleeding and control PPH.</li>
+            <li>Acts on bronchial smooth muscle → may cause <strong>bronchoconstriction</strong>.</li>
+            <li>Acts on gastrointestinal smooth muscle → can lead to <strong>vomiting and diarrhea</strong>.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="badge-list">
+            <span class="badge">↑ Uterine contractility</span>
+            <span class="badge">↑ Uterine tone</span>
+            <span class="badge">↓ Uterine blood loss</span>
+            <span class="badge">Bronchoconstriction</span>
+            <span class="badge">GI smooth muscle stimulation</span>
+          </div>
+          <p class="note" style="margin-top:10px;">
+            Primary therapeutic effect: <strong>uterotonic action</strong> for control of PPH and facilitation of mid-trimester termination.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIONS + ADR -->
+    <div class="layout">
+
+      <!-- DRUG INTERACTIONS -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Important Drug Interactions</h2>
+          <span class="pill">Use with caution</span>
+        </div>
+        <ul class="interaction-list">
+          <li>
+            <strong>Other uterotonics</strong> (oxytocin, methylergometrine):  
+            ↑ risk of <strong>hypertonic uterus</strong> and <strong>uterine rupture</strong>.
+          </li>
+          <li>
+            <strong>Antihypertensives</strong>:  
+            Blood pressure may fluctuate; prostaglandins may reduce antihypertensive effect.
+          </li>
+          <li>
+            <strong>Bronchodilators (β<sub>2</sub>-agonists)</strong>:  
+            Opposing actions – bronchodilators relax bronchial smooth muscle, while carboprost causes bronchoconstriction.
+          </li>
+          <li>
+            <strong>Magnesium sulfate</strong>:  
+            Slight decrease in uterotonic effect.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ADVERSE EFFECTS -->
+      <section class="card">
+        <div class="card-header">
+          <h2 class="card-title">Adverse Drug Reactions</h2>
+          <span class="pill">Monitor closely</span>
+        </div>
+
+        <div class="adr-columns">
+          <div>
+            <div class="chip-title">Common</div>
+            <ul>
+              <li>Nausea, vomiting</li>
+              <li>Diarrhea</li>
+              <li>Abdominal cramps</li>
+              <li>Fever, chills</li>
+              <li>Flushing</li>
+            </ul>
+          </div>
+          <div>
+            <div class="chip-title danger">Serious / Important</div>
+            <ul>
+              <li>Bronchospasm, bronchoconstriction  
+                <span class="note">(contraindicated in asthma)</span>
+              </li>
+              <li>Hypertension</li>
+              <li>Tachycardia</li>
+              <li>Pulmonary edema</li>
+              <li>Uterine hyperstimulation</li>
+              <li>Anaphylactoid reaction</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="warning-strip">
+          <div class="warning-icon">⚠️</div>
+          <div>
+            <strong>Key safety note:</strong> Carboprost should be used only in a monitored setting with resuscitation facilities
+            available. Avoid use in patients with asthma or significant cardiopulmonary disease.
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+      This page is for educational / demonstration purposes only and is not a substitute for official prescribing information
+      or specialist medical guidance.
+    </footer>
+
+  </div>
+</body>
+</html>
