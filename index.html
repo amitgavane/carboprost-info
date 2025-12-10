@@ -75,6 +75,17 @@
       white-space: nowrap;
     }
 
+    /* NEW: style for the infographic image */
+    .header-image {
+      margin-top: 16px;
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: white;
+      padding: 10px;
+    }
+
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
@@ -289,6 +300,13 @@
         <span class="tag">Route: Deep IM injection</span>
         <span class="tag">Used in: PPH · 2nd-trimester termination</span>
       </div>
+
+      <!-- NEW: infographic image -->
+      <img
+        src="carboprost.png.jpeg"
+        alt="Carboprost Tromethamine clinical snapshot infographic"
+        class="header-image"
+      >
     </header>
 
     <!-- TOP LAYOUT: DOSE + INDICATIONS -->
@@ -465,3 +483,4 @@
   </div>
 </body>
 </html>
+
